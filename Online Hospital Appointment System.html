@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hospital Appointment</title>
+</head>
+<body bgcolor="lightblue">
+
+    <h1 align="center">🏥 Online Hospital Appointment</h1>
+
+    <h3>Book Your Appointment</h3>
+
+    <form onsubmit="book(event)">
+        Patient Name:
+        <input type="text" id="name" required><br><br>
+
+        Doctor:
+        <select id="doctor">
+            <option>General Physician</option>
+            <option>Cardiologist</option>
+            <option>Dentist</option>
+            <option>Dermatologist</option>
+        </select><br><br>
+
+        Appointment Date:
+        <input type="date" id="date" required><br><br>
+
+        Phone Number:
+        <input type="tel" id="phone" required><br><br>
+
+        <button type="submit">Book Appointment</button>
+    </form>
+
+    <h3 id="result"></h3>
+
+    <script>
+        function book(event) {
+            event.preventDefault();
+
+            let name = document.getElementById("name").value;
+            let doctor = document.getElementById("doctor").value;
+            let date = document.getElementById("date").value;
+
+            document.getElementById("result").innerHTML =
+                "Appointment Request Submitted!<br>" +
+                "Patient: " + name + "<br>" +
+                "Doctor: " + doctor + "<br>" +
+                "Date: " + date;
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Beauty Parlour Booking</title>
+</head>
+<body bgcolor="pink">
+
+    <h1 align="center">💄 Beauty Parlour</h1>
+
+    <h3>Book Your Appointment</h3>
+
+    <form onsubmit="book(event)">
+        Name:
+        <input type="text" id="name" required><br><br>
+
+        Service:
+        <select id="service">
+            <option>Hair Cut</option>
+            <option>Facial</option>
+            <option>Makeup</option>
+            <option>Manicure</option>
+        </select><br><br>
+
+        Date:
+        <input type="date" id="date" required><br><br>
+
+        <button type="submit">Book Now</button>
+    </form>
+
+    <h3 id="result"></h3>
+
+    <script>
+        function book(event) {
+            event.preventDefault();
+
+            let name = document.getElementById("name").value;
+            let service = document.getElementById("service").value;
+            let date = document.getElementById("date").value;
+
+            document.getElementById("result").innerHTML =
+                "Booking Successful!<br>Name: " + name +
+                "<br>Service: " + service +
+                "<br>Date: " + date;
+        }
+    </script>
+
+</body>
+</html>

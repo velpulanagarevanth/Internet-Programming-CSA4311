@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Library Management</title>
+</head>
+<body>
+    <h2>Online Library Management System</h2>
+
+    <h3>Available Books</h3>
+    <table border="1" cellpadding="8">
+        <tr>
+            <th>Book Name</th>
+            <th>Author</th>
+            <th>Action</th>
+        </tr>
+        <tr>
+            <td>Java Programming</td>
+            <td>James</td>
+            <td><button onclick="borrow('Java Programming')">Borrow</button></td>
+        </tr>
+        <tr>
+            <td>Web Development</td>
+            <td>John</td>
+            <td><button onclick="borrow('Web Development')">Borrow</button></td>
+        </tr>
+        <tr>
+            <td>Python Basics</td>
+            <td>Guido</td>
+            <td><button onclick="borrow('Python Basics')">Borrow</button></td>
+        </tr>
+    </table>
+
+    <p id="msg">Select a book to borrow.</p>
+
+    <script>
+        function borrow(book) {
+            document.getElementById("msg").innerHTML =
+                "You selected: " + book;
+        }
+    </script>
+</body>
+</html>

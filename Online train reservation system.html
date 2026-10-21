@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Train Reservation</title>
+</head>
+<body>
+    <h2>Online Train Reservation</h2>
+
+    <form onsubmit="reserveTrain(event)">
+        Passenger Name:
+        <input type="text" id="name" required><br><br>
+
+        Train:
+        <select id="train">
+            <option>Express Train</option>
+            <option>Superfast Express</option>
+            <option>Passenger Train</option>
+        </select><br><br>
+
+        From:
+        <input type="text" id="from" required><br><br>
+
+        To:
+        <input type="text" id="to" required><br><br>
+
+        Journey Date:
+        <input type="date" id="date" required><br><br>
+
+        <button type="submit">Reserve Ticket</button>
+    </form>
+
+    <p id="result"></p>
+
+    <script>
+        function reserveTrain(event) {
+            event.preventDefault();
+
+            let name = document.getElementById("name").value;
+            let train = document.getElementById("train").value;
+            let from = document.getElementById("from").value;
+            let to = document.getElementById("to").value;
+            let date = document.getElementById("date").value;
+
+            if (from.trim().toLowerCase() ===
+                to.trim().toLowerCase()) {
+                document.getElementById("result").innerHTML =
+                    "Source and destination must be different.";
+                return;
+            }
+
+            document.getElementById("result").innerHTML =
+                "Reservation request received!<br>" +
+                "Passenger: " + name + "<br>" +
+                "Train: " + train + "<br>" +
+                "Route: " + from + " to " + to + "<br>" +
+                "Date: " + date;
+        }
+    </script>
+</body>
+</html>

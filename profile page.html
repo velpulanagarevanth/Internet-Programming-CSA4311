@@ -1,0 +1,162 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Profile Page</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(120deg, #89f7fe, #66a6ff);
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+        }
+
+        .profile {
+            background: white;
+            width: 350px;
+            max-width: 100%;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 5px 20px #55555555;
+            box-sizing: border-box;
+        }
+
+        .profile img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid #4285f4;
+            object-fit: cover;
+        }
+
+        h1 {
+            color: #222;
+            margin-bottom: 8px;
+        }
+
+        h3 {
+            color: #4285f4;
+            margin-top: 25px;
+        }
+
+        .role {
+            color: #4285f4;
+            font-weight: bold;
+        }
+
+        p {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .skills span {
+            display: inline-block;
+            background: #4285f4;
+            color: white;
+            padding: 8px 12px;
+            margin: 4px;
+            border-radius: 20px;
+            font-size: 13px;
+        }
+
+        .contact {
+            background: #f2f6ff;
+            padding: 12px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        button {
+            background: #4285f4;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            margin-top: 20px;
+            font-size: 15px;
+        }
+
+        button:hover {
+            background: #174ea6;
+        }
+
+        a {
+            color: #4285f4;
+            text-decoration: none;
+            margin: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="profile">
+
+        <img
+            src="https://placehold.co/150x150/4285f4/ffffff?text=Photo"
+            alt="Profile Photo"
+        >
+
+        <h1 id="name">Your Name</h1>
+
+        <p class="role" id="role">B.Tech Computer Science Student</p>
+
+        <p>
+            Hello! I am a student interested in web development,
+            programming, and learning new technologies.
+            I enjoy creating useful projects.
+        </p>
+
+        <h3>My Skills</h3>
+
+        <div class="skills">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>Java</span>
+            <span>Python</span>
+        </div>
+
+        <div class="contact">
+            <p>📧 yourmail@example.com</p>
+            <p>📍 India</p>
+        </div>
+
+        <p>
+            <a href="https://github.com/" target="_blank">GitHub</a>
+            <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
+        </p>
+
+        <button onclick="editProfile()">Edit Profile</button>
+
+    </div>
+
+    <script>
+        function editProfile() {
+            let newName = prompt("Enter your name:");
+
+            if (newName !== null && newName.trim() !== "") {
+                document.getElementById("name").textContent = newName;
+            }
+
+            let newRole = prompt("Enter your role:");
+
+            if (newRole !== null && newRole.trim() !== "") {
+                document.getElementById("role").textContent = newRole;
+            }
+        }
+    </script>
+
+</body>
+</html>
+```

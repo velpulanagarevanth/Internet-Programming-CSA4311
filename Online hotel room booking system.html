@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hotel Booking</title>
+</head>
+<body>
+    <h2>Online Hotel Room Booking</h2>
+
+    <form onsubmit="bookRoom(event)">
+        Name: <input type="text" id="name" required><br><br>
+
+        Check-in Date: <input type="date" required><br><br>
+
+        Check-out Date: <input type="date" required><br><br>
+
+        Room Type:
+        <select id="room">
+            <option>Single Room</option>
+            <option>Double Room</option>
+            <option>Deluxe Room</option>
+        </select><br><br>
+
+        <button type="submit">Book Room</button>
+    </form>
+
+    <p id="msg"></p>
+
+    <script>
+        function bookRoom(event) {
+            event.preventDefault();
+
+            let name = document.getElementById("name").value;
+            let room = document.getElementById("room").value;
+
+            document.getElementById("msg").innerHTML =
+                "Thank you, " + name +
+                "! Your " + room + " selection is recorded.";
+        }
+    </script>
+</body>
+</html>

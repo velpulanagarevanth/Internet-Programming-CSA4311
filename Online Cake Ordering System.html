@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cake Ordering System</title>
+</head>
+<body bgcolor="pink">
+
+    <h1 align="center">🎂 Sweet Cake Shop</h1>
+
+    <h3>Available Cakes</h3>
+
+    <p>Chocolate Cake - ₹500
+        <button onclick="order('Chocolate Cake',500)">Order</button>
+    </p>
+
+    <p>Vanilla Cake - ₹400
+        <button onclick="order('Vanilla Cake',400)">Order</button>
+    </p>
+
+    <p>Strawberry Cake - ₹600
+        <button onclick="order('Strawberry Cake',600)">Order</button>
+    </p>
+
+    <h3 id="result">Your Order</h3>
+
+    <script>
+        function order(name, price) {
+            document.getElementById("result").innerHTML =
+                "You ordered " + name + ". Price: ₹" + price;
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flight Reservation</title>
+</head>
+<body>
+    <h2>Online Flight Reservation</h2>
+
+    <form onsubmit="bookFlight(event)">
+        Passenger Name:
+        <input type="text" id="name" required><br><br>
+
+        From:
+        <select id="from">
+            <option>Hyderabad</option>
+            <option>Chennai</option>
+            <option>Delhi</option>
+        </select><br><br>
+
+        To:
+        <select id="to">
+            <option>Delhi</option>
+            <option>Mumbai</option>
+            <option>Hyderabad</option>
+        </select><br><br>
+
+        Travel Date:
+        <input type="date" id="date" required><br><br>
+
+        Class:
+        <select id="class">
+            <option>Economy</option>
+            <option>Business</option>
+            <option>First Class</option>
+        </select><br><br>
+
+        <button type="submit">Book Flight</button>
+    </form>
+
+    <p id="result"></p>
+
+    <script>
+        function bookFlight(event) {
+            event.preventDefault();
+
+            let name = document.getElementById("name").value;
+            let from = document.getElementById("from").value;
+            let to = document.getElementById("to").value;
+            let date = document.getElementById("date").value;
+            let cls = document.getElementById("class").value;
+
+            if (from === to) {
+                document.getElementById("result").innerHTML =
+                    "Please select different cities.";
+                return;
+            }
+
+            document.getElementById("result").innerHTML =
+                "Flight booking request received!<br>" +
+                "Passenger: " + name + "<br>" +
+                "Route: " + from + " to " + to + "<br>" +
+                "Date: " + date + "<br>" +
+                "Class: " + cls;
+        }
+    </script>
+</body>
+</html>
